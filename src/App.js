@@ -15,8 +15,8 @@ function App() {
     const nextNum = random(6);
     setNum(nextNum);
     setSum(sum + nextNum); // 총점
-    gameHistory.push(nextNum); //gameHistory가 배열이니까 push 메소드로 nextNum을 추가하고
-    setGameHistory(gameHistory); //새 값이 추가된 gameHistory State를 전달
+    // gameHistory.push(nextNum); //gameHistory가 배열이니까 push 메소드로 nextNum을 추가하고
+    setGameHistory([...gameHistory, nextNum]); //새 값이 추가된 gameHistory State를 전달
   }; //num state를 바꾸는 함수
 
   const handleClearClick = () => {
