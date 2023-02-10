@@ -8,15 +8,18 @@ function random(n) {
 
 function App() {
   const [num, setNum] = useState(1);
+  const [sum, setSum] = useState(0); //총점 구하는 state -> 초기값 0으로 줌
 
   const handleRollClick = () => {
     const nextNum = random(6);
     setNum(nextNum);
-  }; //num state를 3으로 바꾸는 함수
+    setSum(sum + nextNum); // 총점
+  }; //num state를 바꾸는 함수
 
-  const handleClearClick = ()=>{
+  const handleClearClick = () => {
     setNum(1);
-  };
+    setSum(0);
+  }; //초기화 기능
 
   return (
     <div>
@@ -24,7 +27,12 @@ function App() {
         <Button onClick={handleRollClick}>던지기</Button>
         <Button onClick={handleClearClick}>처음부터</Button>
       </div>
-      <Dice color="red" num={num} />
+      <div>
+        <h2>나</h2>
+        <Dice color="blue" num={num}/>
+        <h2>총점</h2> 
+        <p>{sum}</p> 
+      </div>
     </div>
   );
 }
