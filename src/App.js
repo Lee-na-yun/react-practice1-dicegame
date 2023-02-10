@@ -14,11 +14,15 @@ function App() {
     setNum(nextNum);
   }; //num state를 3으로 바꾸는 함수
 
+  const handleClearClick = ()=>{
+    setNum(1);
+  };
+
   return (
     <div>
       <div>
         <Button onClick={handleRollClick}>던지기</Button>
-        <Button>처음부터</Button>
+        <Button onClick={handleClearClick}>처음부터</Button>
       </div>
       <Dice color="red" num={num} />
     </div>
