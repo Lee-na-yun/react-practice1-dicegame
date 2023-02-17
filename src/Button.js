@@ -1,32 +1,10 @@
-const baseButtonStyle = {
-  padding: "14px 27px",
-  border: "solid 1px #7090ff",
-  outline: "none",
-  color: "#7090ff",
-  cursor: "pointer",
-  backgroundColor: "rgba(0,89,255,0.2)",
-  borderRadius: "30px",
-  fontSize: "17px",
-};
+import './Button.css';
 
-const blueButtonStyle = {
-    ...baseButtonStyle,
-    backgroundColor: 'rgba(0,89,255,0.2)',
-    border:'solid 1px #7090ff',
-    color:'#7090ff',
-};
-
-const redButtonStyle = {
-    ...baseButtonStyle,
-    backgroundColor: 'rgba(255,78,78,0.2)',
-    border:'solid 1px #ff466f',
-    color:'#ff4664'
-};
-
-function Button({ children, onClick, color }) {
-    const style = color === 'red'? redButtonStyle : blueButtonStyle;
+function Button({ children, onClick, color='blue', className=''}) {
+    const classNames = `Button ${color} ${className}`;
+    //const style = color === 'red'? redButtonStyle : blueButtonStyle;
   return (
-    <button style={style} onClick={onClick}>
+    <button className={classNames} onClick={onClick}>
       {children}
     </button>
   );
