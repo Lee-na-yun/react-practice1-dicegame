@@ -1,3 +1,8 @@
-.App .App-button{
-    margin: 6px;
+.App .App-button {
+  margin: 6px;
+}
+
+.logo {
+  height: 65px;
+  padding-top: 40px;
 }
